@@ -1,0 +1,57 @@
+---
+title: Import from Matter (.ZIP or .CSV)
+description: Learn how to import your saved content from Matter as a CSV file and import it to your Folio account.
+tags: [import, matter, csv, zip, export, faq]
+---
+import { Callout } from "fumadocs-ui/components/callout";
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+## Export from Matter
+
+To export your saved content from Matter as a CSV file and receive it via email, follow these steps:
+1. Navigate to the [Matter app](https://web.getmatter.com/home).
+2. Click the [`⚙️` Settings](https://web.getmatter.com/settings) icon at the bottom of Matter's left sidebar.
+3. Click the `Export` button to begin the export process.
+4. Check your inbox or spam folder for the download file.
+
+![Matter_Import](/import/Matter_Import.png)
+
+## Import to Folio
+
+Once you've received the Matter CSV file in your email, follow these steps to import your Matter saves to Folio:
+1. Click the **`⚙️ Settings`** icon in the Folio app's bottom navigation bar.
+2. Select the **`Import`** option from the Settings page.
+3. Choose **`Matter (.ZIP, .CSV)`**.
+4. Folio will open a file explorer where you can upload your **`Matter CSV`** file.
+5. Confirm that you're uploading the correct Instapaper CSV file.
+6. Wait for the import process to complete.
+7. Check the success message when the import process finishes.
+![Import-to-Folio-Matter](/import/Import-to-Folio-Matter.png)
+
+## ⁉️ FAQs
+
+<Accordions>
+  <Accordion title="🕓 How long does an import take?">
+      - <p> Small files (under 500 matters) → usually a few seconds.</p>
+      - <p> Larger imports → may take a few minutes; Folio will send you a notification when done.</p>
+  </Accordion>
+  <Accordion title="❌ My Matter file won’t upload into Folio. What should I do?">
+      - <p> Make sure it’s the **CSV export file**.</p>
+      - <p> Check that the file is not too large (split into multiple exports if needed).</p>
+  </Accordion>
+  <Accordion title="🔁 Some article links are broken after import. Why?">
+      - <p> Matter only stores **saved links** (not always cached content). If the original site is gone, Folio won’t be able to fetch the full article text.</p>
+  </Accordion>
+  <Accordion title="⬇️ Should I keep the app open during the Matter CSV import process?">
+      - <p> Yes, you need to keep the app open until the import process is completed and you see the success message.</p>
+  </Accordion>
+    <Accordion title="💡 How can I verify whether my Matter data was successfully imported into Folio?">
+      - <p> Folio will display a confirmation message indicating whether your data was successfully imported into your account.</p>
+  </Accordion>
+  <Accordion title="🧩 Is there another way to import from Matter to Folio?">
+      - <p> Not yet! However, we're working on integrating with Matter's API so you can import your saves with a single click 🚀!</p>
+  </Accordion>
+  <Accordion title="🎨 Does Folio import customized saves (such as Favorites, Highlights, and Tags) from Matter?">
+      - <p> Yes, all customized saves will display in their correct tabs (**Favorites, Highlights, Tags, and Archived**) on Folio.</p>
+  </Accordion>
+</Accordions>

@@ -1,0 +1,59 @@
+---
+title: Import from Pocket (.CSV)
+description: Learn how to export your saves from Pocket as a CSV file and import them into your Folio account.
+tags: [import, pocket, csv, export, faq]
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+## Export from Pocket
+
+<Callout type="warning" title="Important Notice">
+    Pocket services have shut down on July 8, 2025. Pocket integration with desktop Firefox was removed in [Firefox version](https://support.mozilla.org/en-US/kb/find-what-version-firefox-you-are-using) 140 and in [Firefox ESR](https://support.mozilla.org/en-US/kb/firefox-esr-release-cycle) (Extended Support Release) versions 115 and 128. You can export your saved items until October 8, 2025, before they are permanently deleted. To learn more, see [this article](https://support.mozilla.org/en-US/kb/future-of-pocket).
+</Callout>
+
+Before exporting your data, ensure your Pocket or Mozilla account has a valid, active email address. Your export file will be sent to this email.
+
+To export your saved items from Pocket as a CSV file, follow these steps:
+1. Visit [https://getpocket.com/export](https://getpocket.com/export).
+2. Verify the email address displayed in the top left corner of the page. If your email is incorrect or inaccessible, update it before requesting your export.
+3. Click the **`Export CSV file`** button.
+4. You'll receive a confirmation message about your export request. The CSV file generation may take up to 24 hours before it's delivered to your email. If you don't receive it within 24 hours, check your spam or junk folder.
+For additional information, refer to this guide: https://support.mozilla.org/en-US/kb/exporting-your-pocket-list
+
+![Export-from-Pocket.png](/import/Export-from-Pocket.png)
+
+## Import to Folio
+
+Once you've received the Pocket CSV file in your email, follow these steps to import your Pocket saves to Folio:
+1. Click the `⚙️ Settings` icon in the Folio app's bottom navigation bar.
+2. Select the `Import` option from the Settings page.
+3. Choose `Pocket (.ZIP or .CSV)`.
+4. Folio will open a file explorer where you can upload your `Pocket CSV` file.
+5. Confirm that you're uploading the correct Pocket CSV file.
+6. Wait for the import process to complete.
+7. Check the success message when the import process finishes.
+
+![Import-to-Folio.png](/import/Import-to-Folio.png)
+
+## ⁉️ FAQs
+
+<Accordions>
+    <Accordion title="⬇️ Should I keep the app open during the Pocket CSV import process?">
+        - Yes, you need to keep the app open until the import process is completed and you see the success message.
+    </Accordion>
+    <Accordion title="💡 How can I verify whether my Pocket data was successfully imported into Folio?">
+        - Folio will display a confirmation message indicating whether your data was successfully imported into your account.
+    </Accordion>
+    <Accordion title="🕓 How long does the importing process take?">
+        The import processing time depends on several factors:
+            1. **Number of saved items in your CSV file.**
+            2. **Your internet connection speed during the upload.**
+            3. **Amount of customizations (highlights, tags) on your saved items.**
+            4. **Overall size of your CSV file.**
+    </Accordion>
+    <Accordion title="🔁 Is there another way to import from Pocket to Folio?">
+        - Yes, you can sync your saves from Pocket to Folio by using `Pocket Sign In` to import your saves through our API integration with Pocket. Learn more here: [Sync from Pocket (Sign In)](https://www.notion.so/Sync-from-Pocket-Sign-In-2488aa2c9fdb80f989eeeb9ef7d98c99?pvs=21)
+    </Accordion>
+</Accordions>

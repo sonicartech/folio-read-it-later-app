@@ -1,0 +1,74 @@
+---
+title: Import from Instapaper (.CSV)
+description: Learn how to export your saved articles from Instapaper as a CSV file and import them into your Folio account.
+tags: [import, instapaper, csv, export, faq]
+---
+import { Callout } from "fumadocs-ui/components/callout";
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+##  Export from Instapaper
+
+<Callout type="info" title="Tip">
+    You will need to use the <strong>Instapaper web app</strong> to <strong>access the export option</strong>. The iOS and Android apps do not support this feature.
+</Callout>
+
+To export all saved articles from Instapaper:
+
+1. Navigate to the [Instapaper app](https://instapaper.com/).
+2. Click on your email address in the top-right corner of the Instapaper header.
+3. Select [**`Settings`**](https://instapaper.com/user) from the dropdown menu.
+4. Scroll down to the **`Export`** section.
+5. Click the **`Send .CSV file to your email`** button.
+6. Check your inbox or spam folder to download the file.
+
+![Instapaper_Import](/import/Instapaper_Import.png)
+
+##  Import to Folio
+
+Once you've received the Instapaper CSV file in your email, follow these steps to import your Instapaper saves to Folio:
+1. Click the **`⚙️ Settings`** icon in the Folio app's bottom navigation bar.
+2. Select the **`Import`** option from the Settings page.
+3. Choose **`Instapaper (.CSV)`**.
+4. Folio will open a file explorer where you can upload your **`Instapaper CSV`** file.
+5. Confirm that you're uploading the correct Instapaper CSV file.
+6. Wait for the import process to complete.
+7. Check the success message when the import process finishes.
+
+![Import-to-Folio-Instapaper](/import/Import-to-Folio-Instapaper.png)
+
+## ⁉️ FAQs
+
+<Accordions>
+    <Accordion title="❌ My Instapaper file won’t upload into Folio. What should I do?">
+        <ul>
+            <li>Make sure it’s the **CSV export file**.</li>
+            <li>Check that the file is not too large (split into multiple exports if needed).</li>
+        </ul>
+    </Accordion>
+    <Accordion title="🔁 Some article links are broken after import. Why?">
+        <ul>
+            <li>Instapaper only stores **saved links** (not always cached content). If the original site is gone, Folio won’t be able to fetch the full article text.</li>
+        </ul>
+    </Accordion>
+    <Accordion title="⬇️ Should I keep the app open during the Instapaper CSV import process?">
+      - <p>Yes, you need to keep the app open until the import process is completed and you see the success message.</p>
+    </Accordion>
+    <Accordion title="💡 How can I verify whether my Instapaper data was successfully imported into Folio?">
+      - <p>Folio will display a confirmation message indicating whether your data was successfully imported into your account.</p>
+    </Accordion>
+    <Accordion title="🕓 How long does the importing process take?">
+        import processing time depends on several factors:
+        <ul>
+          <li>Number of saved items in your CSV file.</li>
+          <li>Your internet connection speed during the upload.</li>
+          <li>Amount of customizations (highlights, tags) on your saved items.</li>
+          <li>Overall size of your CSV file.</li>
+        </ul>
+    </Accordion>
+    <Accordion title="🧩 Is there another way to import from Instapaper to Folio?">
+        - <p> Not yet! However, we're working on integrating with Instapaper's API so you can import your saves with a single click 🚀!</p>
+    </Accordion>
+    <Accordion title="🎨 Does Folio import customized saves (such as Favorites, Highlights, and Tags) from Matter?">
+        - <p>Yes, all customized saves will display in their correct tabs (**Favorites, Highlights, Tags, and Archived**) on Folio.</p>
+    </Accordion>
+</Accordions>

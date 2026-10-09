@@ -1,0 +1,8 @@
+{
+  "title": "👤 My Account",
+  "pages": [
+    "index",
+    "reset-my-password",
+    "delete-my-account"
+  ]
+}

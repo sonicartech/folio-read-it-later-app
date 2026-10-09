@@ -1,0 +1,59 @@
+---
+title: Import from Raindrop.io (.CSV)
+description: Discover how to export your saved content from Raindrop.oi and import it seamlessly into your Folio account.
+tags: [import, raindrop, csv, export, faq]
+---
+import { Callout } from "fumadocs-ui/components/callout";
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+## Export from Raindrop.io
+
+To export your content from Raindrop as a CSV file:
+1. Navigate to the [Raindrop app](https://app.raindrop.io/my/0).
+2. Click your email address at the top left of the Raindrop sidebar.
+3. Select the [`⚙️ Settings`](https://app.raindrop.io/settings/app) option.
+4. Click on [`Backups`](https://app.raindrop.io/settings/backups).
+5. Select `➕ Create New`.
+6. Wait for the app to prepare your backup.
+7. Refresh the page to view the new backup.
+8. Click `CSV` to download the file.
+
+![import-Raindrop-Import](/import/Raindrop_Import.png)
+
+## Import to Folio
+
+Once you've downloaded the Raindrop CSV file, follow these steps to import your bookmarks into Folio:
+1. Click the [**`⚙️ Settings`**](https://app.savewithfolio.com/settings) icon in the Folio app's bottom navigation bar.
+2. Select the [**`Import`**](https://app.savewithfolio.com/import) option from the Settings page.
+3. Choose **`Raindrop.io (.CSV)`**.
+4. Folio will open a file explorer where you can upload your **`Raindrop.io CSV`** file.
+5. Confirm that you're uploading the correct Instapaper CSV file.
+6. Wait for the import process to complete.
+7. Check the success message when the import process finishes.
+
+![Import-to-Folio-Raindrop](/import/Import-to-Folio-Raindrop.png)
+
+## ⁉️ FAQs
+
+<Accordions>
+    <Accordion title="🕓 How long does an import take?">
+        - Small files (under 500 items) → usually a few seconds.
+        - Larger imports → may take a few minutes; Folio will send you a notification when done.
+    </Accordion>
+    <Accordion title="❌ My Raindrop file won’t upload into Folio. What should I do?">
+        - Make sure it’s the **CSV export file**.
+        - Check that the file is not too large (split into multiple exports if needed).
+    </Accordion>
+    <Accordion title="💡 How can I verify whether my Raindrop data was successfully imported into Folio?">
+        - Folio will display a confirmation message indicating whether your data was successfully imported into your account.
+    </Accordion>
+    <Accordion title="⬇️ Should I keep the app open during the Raindrop CSV import process?">
+        - Yes, you need to keep the app open until the import process is completed and you see the success message.
+    </Accordion>
+        <Accordion title="🎨 Does Folio import customized saves (such as Favorites, Highlights, and Tags) from Raindrop?">
+        - Yes, all customized saves will display in their correct tabs (**Favorites, Highlights, Tags, and Archived**) on Folio
+    </Accordion>
+    <Accordion title="🧩 Is there another way to import from Raindrop to Folio?">
+        - Not yet! However, we're working on integrating with Raindrop's API so you can import your saves with a single click 🚀!
+    </Accordion>
+</Accordions>
