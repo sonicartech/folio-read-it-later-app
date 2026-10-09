@@ -38,13 +38,13 @@ export default function HomePage() {
 
         <div className="flex gap-4 mt-[24px] flex-wrap justify-center">
           <button
-            className="border-2 border-[#A8F4FD99] py-4 px-8 rounded-full bg-[#008F9F] text-white dark:text-black font-semibold flex justify-center gap-3 cursor-pointer hover:opacity-95  transition-all"
+            className="border-2 border-[#A8F4FD99] dark:border-[#2BBFD0]/40 py-4 px-8 rounded-full bg-[#008F9F] text-white font-semibold flex justify-center gap-3 cursor-pointer hover:opacity-95  transition-all"
             onClick={() => setOpen(true)}
           >
             <Search />
             <span>Search Now</span>
           </button>
-          <AISearchTrigger className="border-2  borded-[#008F9F] py-4 px-8 rounded-full bg-[#008F9F33] flex justify-center gap-3 cursor-pointer hover:opacity-95  transition-all  font-semibold">
+          <AISearchTrigger className="border-2 border-[#008F9F] dark:border-[#2BBFD0]/60 py-4 px-8 rounded-full bg-[#008F9F33] dark:bg-[#2BBFD0]/15 dark:text-[#8AE6F0] flex justify-center gap-3 cursor-pointer hover:opacity-95  transition-all  font-semibold">
             <Bot />
             <span>Ask AI</span>
           </AISearchTrigger>
@@ -54,25 +54,25 @@ export default function HomePage() {
           <span className="flex items-center">Popular topics: </span>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
-              className="bg-[#E3E3E366] dark:bg-white/10 py-2 px-4 rounded-full"
+              className="bg-[#E3E3E366] dark:bg-white/10 py-2 px-4 rounded-full hover:text-[#008F9F] dark:hover:text-[#2BBFD0] transition-colors"
               href={"/docs/getting-started"}
             >
               Getting Started
             </Link>
             <Link
-              className="bg-[#E3E3E366] dark:bg-white/10 py-2 px-4 rounded-full"
+              className="bg-[#E3E3E366] dark:bg-white/10 py-2 px-4 rounded-full hover:text-[#008F9F] dark:hover:text-[#2BBFD0] transition-colors"
               href={"/docs/folio-reader"}
             >
               Reader
             </Link>
             <Link
-              className="bg-[#E3E3E366] dark:bg-white/10 py-2 px-4 rounded-full"
+              className="bg-[#E3E3E366] dark:bg-white/10 py-2 px-4 rounded-full hover:text-[#008F9F] dark:hover:text-[#2BBFD0] transition-colors"
               href={"/docs/folio-discover"}
             >
               Discovery
             </Link>
             <Link
-              className="bg-[#E3E3E366] dark:bg-white/10 py-2 px-4 rounded-full"
+              className="bg-[#E3E3E366] dark:bg-white/10 py-2 px-4 rounded-full hover:text-[#008F9F] dark:hover:text-[#2BBFD0] transition-colors"
               href={"/docs/faqs"}
             >
               FAQs
@@ -85,17 +85,17 @@ export default function HomePage() {
             <Link
               key={card.title}
               href={card.link}
-              className="border border-[#008F9F66] rounded-xl p-8  shadow-sm hover:shadow-md  hover:bg-[#008F9F] group transition-all"
+              className={`${card.fullWidth ? "md:col-span-2 " : ""}border border-[#008F9F66] dark:border-[#2BBFD0]/25 dark:bg-fd-card rounded-xl p-8  shadow-sm hover:shadow-md hover:bg-[#008F9F] dark:hover:bg-[#008F9F] group transition-all`}
             >
               <div className="flex  gap-4 flex-col items-center">
-                <div className="bg-[#008F9F33]  border-[#008F9F] border rounded-full text-teal-600 group-hover:text-white  group-hover:border-white group-hover:bg-[#EBFDFF66] p-4">
+                <div className="bg-[#008F9F33]  border-[#008F9F] border rounded-full text-[#008F9F] dark:text-[#2BBFD0] dark:border-[#2BBFD0]/60 dark:bg-[#2BBFD0]/15 group-hover:text-white  group-hover:border-white group-hover:bg-[#EBFDFF66] p-4">
                   <card.icon className="w-6 h-6 " />
                 </div>
 
                 <h3 className="text-lg font-semibold  group-hover:text-white">
                   {card.title}
                 </h3>
-                <p className="text-sm text-[#424242] dark:text-[#E3E3E3CC] max-w-[380px] text-center group-hover:text-white">
+                <p className={`text-sm text-[#424242] dark:text-[#E3E3E3CC] ${card.fullWidth ? "max-w-[520px]" : "max-w-[380px]"} text-center group-hover:text-white`}>
                   {card.description}
                 </p>
                 <span className="inline-block mt-2 text-[#232323] dark:text-[#E3E3E3CC] group-hover:text-white font-medium">
@@ -128,6 +128,26 @@ export default function HomePage() {
 
             <p className="text-xs mt-4 opacity-80 text-[#E3E3E3CC]">
               © 2025 Folio. All rights reserved.
+            </p>
+            <p className="text-xs opacity-80 text-[#E3E3E3CC]">
+              Made with 💛 @{" "}
+              <Link
+                href="https://savewithfolio.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-white transition"
+              >
+                Folio
+              </Link>{" "}
+              |{" "}
+              <Link
+                href="https://sonicar.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-white transition"
+              >
+                Sonicar
+              </Link>
             </p>
           </div>
         </footer>

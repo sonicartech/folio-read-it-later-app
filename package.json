@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "types:check": "next typegen && tsc --noEmit"
+    "types:check": "next typegen && tsc --noEmit",
+    "worker:deploy": "npm --prefix worker run deploy"
   },
   "dependencies": {
     "@ai-sdk/react": "^4.0.140",

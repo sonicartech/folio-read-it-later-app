@@ -7,6 +7,7 @@ import {
   Settings,
   Rocket,
   FolderSync,
+  MessageCircleQuestionMark,
 } from "lucide-react";
 
 export const docsCards = [
@@ -49,5 +50,13 @@ export const docsCards = [
     title: "Settings & Preferences",
     description: "Access premium features, share data, and log out securely.",
     link: "/docs/settings-preferences",
+  },
+  {
+    icon: MessageCircleQuestionMark,
+    title: "Frequently Asked Questions (FAQs)",
+    description:
+      "Quickly find answers to the most common questions about the Folio app and its features.",
+    link: "/docs/faqs",
+    fullWidth: true,
   },
 ];

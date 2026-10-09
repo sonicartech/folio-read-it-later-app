@@ -22,14 +22,49 @@
   background-position: center;
 }
 
+/* The footer is teal in both themes, so the logo stays the same. */
 
-.dark .footer-logo {
-  background-image: url("/whiteFooterLogo.svg");
+/* Folio brand theme (overrides the neutral fumadocs palette) */
+:root {
+  --folio-teal: #008f9f;
+  --color-fd-primary: var(--folio-teal);
+  --color-fd-primary-foreground: #ffffff;
+  --color-fd-accent: rgba(0, 143, 159, 0.12);
+  --color-fd-accent-foreground: #006e7a;
+  --color-fd-ring: var(--folio-teal);
+  --folio-sidebar-active: #c4e1e4;
+  --folio-sidebar-active-foreground: #004f58;
 }
 
-html:not(.dark) #nd-sidebar a[data-active="true"] {
-  background-color: #c4e1e4;
+.dark {
+  --folio-teal: #2bbfd0;
+  --color-fd-background: hsl(190, 14%, 6.5%);
+  --color-fd-foreground: hsl(185, 10%, 92%);
+  --color-fd-card: hsl(190, 14%, 9.5%);
+  --color-fd-card-foreground: hsl(185, 10%, 96%);
+  --color-fd-popover: hsl(190, 14%, 10.5%);
+  --color-fd-popover-foreground: hsl(185, 10%, 88%);
+  --color-fd-muted: hsl(190, 12%, 12.5%);
+  --color-fd-muted-foreground: hsla(185, 12%, 72%, 0.85);
+  --color-fd-secondary: hsl(190, 12%, 12.5%);
+  --color-fd-secondary-foreground: hsl(185, 10%, 92%);
+  --color-fd-border: hsla(186, 40%, 60%, 0.16);
+  --color-fd-primary: var(--folio-teal);
+  --color-fd-primary-foreground: #04191c;
+  --color-fd-accent: rgba(43, 191, 208, 0.14);
+  --color-fd-accent-foreground: #8ae6f0;
+  --color-fd-ring: var(--folio-teal);
+  --folio-sidebar-active: rgba(43, 191, 208, 0.18);
+  --folio-sidebar-active-foreground: #8ae6f0;
 }
+
+.dark #nd-sidebar {
+  --color-fd-muted: hsl(190, 12%, 13%);
+  --color-fd-secondary: hsl(190, 12%, 14%);
+  --color-fd-muted-foreground: hsla(185, 12%, 74%, 0.9);
+}
+
 #nd-sidebar a[data-active="true"] {
-  background-color: #2a2a2a;
+  background-color: var(--folio-sidebar-active);
+  color: var(--folio-sidebar-active-foreground);
 }
