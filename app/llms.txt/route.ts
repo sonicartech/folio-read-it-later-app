@@ -1,17 +1,20 @@
 import { docsLlms } from "@/lib/source";
-import { brand, siteDescription, siteName, siteUrl } from "@/lib/shared";
+import { absoluteUrl, brand, siteDescription, siteName } from "@/lib/shared";
 
 export const revalidate = false;
 
 export async function GET() {
-  const index = (await docsLlms.index()).replace(/\]\(\//g, `](${siteUrl}/`);
+  const index = (await docsLlms.index()).replace(
+    /\]\((\/[^)]*)\)/g,
+    (_, path: string) => `](${absoluteUrl(path)})`,
+  );
   const body = `# ${siteName}
 
 > ${siteDescription}
 
 Folio app: ${brand.url}
-Full documentation as one file: ${siteUrl}/llms-full.txt
-Markdown of any page: append \`.md\` to its URL (e.g. ${siteUrl}/docs/faqs.md)
+Full documentation as one file: ${absoluteUrl("/llms-full.txt")}
+Markdown of any page: replace the trailing slash with \`.md\` (e.g. ${absoluteUrl("/docs/faqs.md")})
 
 ${index.replace(/^# .*\n+/, "## Docs\n\n")}`;
 

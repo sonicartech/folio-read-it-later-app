@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl, siteUrl } from "@/lib/shared";
 
+export const dynamic = "force-static";
+
 // AI answer engines are explicitly welcome to read and cite the docs.
 const aiCrawlers = [
   "GPTBot",

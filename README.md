@@ -26,8 +26,26 @@ In the project, you can see:
 | ------------------------- | ------------------------------------------------------ |
 | `app/(home)`              | The route group for your landing page and other pages. |
 | `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+| `app/api/search/route.ts` | Static search index, queried in the browser.           |
 | `worker/`                 | Cloudflare Worker powering the "Ask AI" chat.          |
+
+### Deploy to Hostinger
+
+The site is a static HTML export (`output: "export"`), served from
+`https://folio.sonicar.tech`.
+
+```bash
+npm run package   # builds out/, optimizes images, creates folio-help-center.zip
+```
+
+In Hostinger hPanel, open **File Manager** for the `folio.sonicar.tech`
+subdomain, upload `folio-help-center.zip` into its document root (for example
+`public_html/folio`), extract it there and delete the zip. Make sure the
+hidden `.htaccess` file was extracted: it adds the `/docs/<page>.md` Markdown
+URLs, Markdown for AI agents (`Accept: text/markdown`), HTTPS redirect and
+caching.
+
+Public settings (site URL, chat Worker URL) live in `.env.production`.
 
 ### Ask AI (Cloudflare Worker)
 

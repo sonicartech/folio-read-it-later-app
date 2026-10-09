@@ -5,7 +5,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start",
+    "package": "rm -rf out folio-help-center.zip && next build && node scripts/optimize-images.mjs && cd out && zip -qr ../folio-help-center.zip . && echo \"Created folio-help-center.zip\"",
     "types:check": "next typegen && tsc --noEmit",
     "worker:deploy": "npm --prefix worker run deploy"
   },
@@ -37,6 +37,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "postcss": "^8.5.29",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2"
   }

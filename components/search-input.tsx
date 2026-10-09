@@ -15,7 +15,7 @@ export function SearchInput() {
         onClick={() => setOpen(true)}
         readOnly
       />
-      <SearchDialog open={open} onOpenChange={setOpen} api="/api/search" />
+      <SearchDialog open={open} onOpenChange={setOpen} type="static" api="/api/search" />
     </>
   );
 }
@@ -27,7 +27,7 @@ export function useSearchDialog() {
     open,
     setOpen,
     SearchDialog: () => (
-      <SearchDialog open={open} onOpenChange={setOpen} api="/api/search" />
+      <SearchDialog open={open} onOpenChange={setOpen} type="static" api="/api/search" />
     ),
   };
 }

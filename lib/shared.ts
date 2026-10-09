@@ -31,8 +31,12 @@ export const gitConfig = {
   branch: "main",
 };
 
+/** Absolute URL on the live site; page paths get a trailing slash to match the static export. */
 export function absoluteUrl(path: string) {
-  return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
+  let normalized = path.startsWith("/") ? path : `/${path}`;
+  const lastSegment = normalized.split("/").pop() ?? "";
+  if (!normalized.endsWith("/") && !lastSegment.includes(".")) normalized += "/";
+  return `${siteUrl}${normalized}`;
 }
 
 const getContentUrl = createGetUrl(docsContentRoute);
