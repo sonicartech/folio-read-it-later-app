@@ -1,0 +1,11 @@
+name = "folio-chat"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+
+[ai]
+binding = "AI"
+
+[vars]
+# Comma-separated list of origins allowed to call the worker. Use "*" to allow any.
+ALLOWED_ORIGINS = "https://folio.sonicar.tech,http://localhost:3000"
+MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"

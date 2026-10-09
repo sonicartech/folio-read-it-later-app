@@ -1,7 +1,5 @@
 import "@/app/global.css";
-import { RootProvider } from "fumadocs-ui/provider";
-import { Inter } from "next/font/google";
-import type { ReactNode } from "react";
+import { RootProvider } from "fumadocs-ui/provider/next";
 import { Geist } from "next/font/google";
 import type { Metadata } from "next";
 
@@ -61,7 +59,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function Layout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={geist.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">

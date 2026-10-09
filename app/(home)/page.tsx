@@ -3,26 +3,25 @@
 import { docsCards } from "@/lib/docs";
 import { SearchInput, useSearchDialog } from "@/components/search-input";
 import { AISearchTrigger } from "@/components";
+import { Bot, Search } from "lucide-react";
 import {
-  Bot,
-  Search,
-  Facebook,
-  Twitter,
-  Instagram,
-  Send,
-  Music2,
-  Linkedin,
-} from "lucide-react";
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTelegram,
+  FaTiktok,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 import Link from "next/link";
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com" },
-  { icon: Twitter, href: "https://x.com" }, // X (Twitter)
-  { icon: Instagram, href: "https://instagram.com" },
-  { icon: Send, href: "https://t.me" }, // Telegram
-  { icon: Music2, href: "https://tiktok.com" }, // TikTok
-  { icon: Linkedin, href: "https://linkedin.com" },
+  { icon: FaFacebook, href: "https://facebook.com" },
+  { icon: FaXTwitter, href: "https://x.com" },
+  { icon: FaInstagram, href: "https://instagram.com" },
+  { icon: FaTelegram, href: "https://t.me" },
+  { icon: FaTiktok, href: "https://tiktok.com" },
+  { icon: FaLinkedin, href: "https://linkedin.com" },
 ];
 
 export default function HomePage() {

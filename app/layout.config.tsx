@@ -1,6 +1,5 @@
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import Image from "next/image";
-import whiteLogo from "@/public/whiteLogo.svg";
 import { AISearchTrigger } from "@/components";
 
 /**

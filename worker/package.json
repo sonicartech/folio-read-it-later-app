@@ -1,0 +1,17 @@
+{
+  "name": "folio-chat-worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:docs": "node scripts/build-docs.mjs",
+    "dev": "npm run build:docs && wrangler dev",
+    "deploy": "npm run build:docs && wrangler deploy",
+    "typecheck": "npm run build:docs && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261009.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.149.0"
+  }
+}

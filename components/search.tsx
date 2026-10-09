@@ -11,7 +11,6 @@ import {
 import { Loader2, RefreshCw, Send, X } from "lucide-react";
 import { cn } from "../lib/cn";
 import { buttonVariants } from "./ui/button";
-import Link from "fumadocs-core/link";
 import {
   Dialog,
   DialogClose,
@@ -23,10 +22,12 @@ import {
   DialogTitle,
 } from "@radix-ui/react-dialog";
 import { type UIMessage, useChat, type UseChatHelpers } from "@ai-sdk/react";
-import type { ProvideLinksToolSchema } from "../lib/inkeep-qa-schema";
-import type { z } from "zod";
-import { DefaultChatTransport } from "ai";
+import { TextStreamChatTransport } from "ai";
 import { Markdown } from "./markdown";
+
+// URL of the Cloudflare Worker that answers chat requests (see worker/).
+const CHAT_API_URL =
+  process.env.NEXT_PUBLIC_CHAT_API_URL ?? "http://localhost:8787/chat";
 
 const ChatContext = createContext<UseChatHelpers<UIMessage> | null>(null);
 function useChatContext() {
@@ -207,7 +208,7 @@ function Input(props: ComponentProps<"textarea">) {
 
 const roleName: Record<string, string> = {
   user: "you",
-  assistant: "fumadocs",
+  assistant: "folio ai",
 };
 
 function Message({
@@ -215,17 +216,9 @@ function Message({
   ...props
 }: { message: UIMessage } & ComponentProps<"div">) {
   let markdown = "";
-  let links: z.infer<typeof ProvideLinksToolSchema>["links"] = [];
 
   for (const part of message.parts ?? []) {
-    if (part.type === "text") {
-      markdown += part.text;
-      continue;
-    }
-
-    if (part.type === "tool-provideLinks" && part.input) {
-      links = (part.input as z.infer<typeof ProvideLinksToolSchema>).links;
-    }
+    if (part.type === "text") markdown += part.text;
   }
 
   return (
@@ -241,20 +234,6 @@ function Message({
       <div className="prose text-sm">
         <Markdown text={markdown} />
       </div>
-      {links && links.length > 0 ? (
-        <div className="mt-2 flex flex-row flex-wrap items-center gap-1">
-          {links.map((item, i) => (
-            <Link
-              key={i}
-              href={item.url}
-              className="block text-xs rounded-lg border p-3 hover:bg-fd-accent hover:text-fd-accent-foreground"
-            >
-              <p className="font-medium">{item.title}</p>
-              <p className="text-fd-muted-foreground">Reference {item.label}</p>
-            </Link>
-          ))}
-        </div>
-      ) : null}
     </div>
   );
 }
@@ -262,8 +241,8 @@ function Message({
 export default function AISearch(props: DialogProps) {
   const chat = useChat({
     id: "search",
-    transport: new DefaultChatTransport({
-      api: "/api/chat",
+    transport: new TextStreamChatTransport({
+      api: CHAT_API_URL,
     }),
   });
 
@@ -285,7 +264,7 @@ export default function AISearch(props: DialogProps) {
           <ChatContext value={chat}>
             <div className="px-3 py-2">
               <DialogTitle className="text-sm font-medium">
-                Inkeep AI
+                Ask AI
               </DialogTitle>
               <DialogDescription className="text-xs text-fd-muted-foreground">
                 AI can be inaccurate, please verify the information.
@@ -305,7 +284,7 @@ export default function AISearch(props: DialogProps) {
               <X />
             </DialogClose>
 
-            {messages.length > 0 && (
+            {(messages.length > 0 || chat.error) && (
               <List
                 style={{
                   maskImage:
@@ -316,6 +295,11 @@ export default function AISearch(props: DialogProps) {
                   {messages.map((item) => (
                     <Message key={item.id} message={item} />
                   ))}
+                  {chat.error && (
+                    <p className="text-sm text-red-500">
+                      Sorry, something went wrong. Please try again.
+                    </p>
+                  )}
                 </div>
               </List>
             )}
